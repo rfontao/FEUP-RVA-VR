@@ -1,43 +1,92 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyMovement : MonoBehaviour
+namespace Enemies
 {
-    private NavMeshAgent navMeshAgent;
-    private Animator animator;
-    private static readonly int Speed = Animator.StringToHash("Speed");
-
-    public static Vector3 RandomNavSphere (Vector3 origin, float distance, int layermask) {
-        Vector3 randomDirection = Random.insideUnitSphere * distance;
-               
-        randomDirection += origin;
-               
-        NavMeshHit navHit;
-               
-        NavMesh.SamplePosition(randomDirection, out navHit, distance, layermask);
-               
-        return navHit.position;
-    }
-
-    // Start is called before the first frame update
-    void Start()
+    public class EnemyMovement : MonoBehaviour
     {
-        Vector3 v3 = RandomNavSphere(this.transform.position, 10, LayerMask.NameToLayer("Terrain"));
+        private NavMeshAgent navMeshAgent;
+        private Animator animator;
+        private Vector3 targetPosition;
+        private float timeStopped = 5;
+        private bool wasRunning;
 
-        navMeshAgent = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();
+        [SerializeField] private int fov = 360;
+        [SerializeField] private int viewRange = 15;
+        private static readonly int Idle = Animator.StringToHash("Idle");
+        private static readonly int Walk = Animator.StringToHash("Walk");
+        private static readonly int Run = Animator.StringToHash("Run");
 
-        navMeshAgent.SetDestination(v3);
-        animator.SetFloat(Speed, 2.0f);
-        
-        
-        Debug.Log(v3);
-    }
+        private static Vector3 RandomNavSphere (Vector3 origin, float distance, int layermask) {
+            Vector3 randomDirection = Random.insideUnitSphere * distance;
+               
+            randomDirection += origin;
+               
+            NavMeshHit navHit;
+               
+            NavMesh.SamplePosition(randomDirection, out navHit, distance, layermask);
+               
+            return navHit.position;
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
+        // Start is called before the first frame update
+        void Start()
+        {
+            navMeshAgent = GetComponent<NavMeshAgent>();
+            animator = GetComponent<Animator>();
+        }
+
+        private bool CanSeeTarget(Transform target)
+        {
+            Vector3 toTarget = target.position - (transform.position + new Vector3(0,1,0));
+            if (Vector3.Angle(transform.forward, toTarget) <= fov)
+            {
+                return true;
+            } 
+            return false;
+        }
+    
+        private void NextPosition()
+        {
+            if (wasRunning) animator.SetTrigger(Idle);
+            if (timeStopped > 1.0f && timeStopped < 3.0f && navMeshAgent.velocity == new Vector3(0, 0, 0) && InWalkingState())
+            {
+                animator.SetTrigger(Idle);
+            }
+
+            if (timeStopped > 3.0f)
+            {
+                Vector3 v3 = RandomNavSphere(this.transform.position, 4, LayerMask.NameToLayer("Terrain"));
+                navMeshAgent.SetDestination(v3);
+                animator.SetTrigger(Walk);
+                transform.LookAt(v3);
+                timeStopped = 0;
+            }
+        }
+    
+        // Update is called once per frame
+        void Update()
+        {
+            timeStopped += Time.deltaTime;
+            Transform player = GameObject.FindGameObjectWithTag("Player").transform;
+            if(!CanSeeTarget(player))
+                NextPosition();
+            else
+                RunToPlayer(player);
+        }
+
+        private void RunToPlayer(Transform player)
+        {
+            Vector3 v3 = player.position;
+            navMeshAgent.SetDestination(v3);
+            animator.SetTrigger(Run);
+            transform.LookAt(v3);
+            wasRunning = true;
+        }
+
+        private bool InWalkingState()
+        {
+            return animator.GetCurrentAnimatorClipInfo(0)[0].clip.name == "WalkFWD";
+        }
     }
 }

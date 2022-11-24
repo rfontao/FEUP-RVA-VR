@@ -3627,6 +3627,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce04c043df507414d8d450baee53e9c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fov: 60
+  viewRange: 15
 --- !u!137 &137702290349230977
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -3703,6 +3705,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Rig
       objectReference: {fileID: 0}
+    - target: {fileID: 3705527141795971808, guid: 76defb163e1aac645b3b9366802f1f1b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 3705527141795971834, guid: 76defb163e1aac645b3b9366802f1f1b,
         type: 3}
       propertyPath: m_RequestedTrackingOriginMode
@@ -3726,7 +3733,7 @@ PrefabInstance:
     - target: {fileID: 3705527141795971839, guid: 76defb163e1aac645b3b9366802f1f1b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 63.43
+      value: 80.86
       objectReference: {fileID: 0}
     - target: {fileID: 3705527141795971839, guid: 76defb163e1aac645b3b9366802f1f1b,
         type: 3}
