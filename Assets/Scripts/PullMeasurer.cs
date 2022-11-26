@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.InputSystem.XR.Haptics;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class PullMeasurer : XRBaseInteractable
@@ -6,13 +8,26 @@ public class PullMeasurer : XRBaseInteractable
     [SerializeField] private Transform start;
     [SerializeField] private Transform end;
 
+    [SerializeField] private float hapticMultiplier;
+
     public float PullAmount { get; private set; } = 0.0f;
 
     public Vector3 PullPosition => Vector3.Lerp(start.position, end.position, PullAmount);
 
+    private XRDirectInteractor leftController;
+    private XRDirectInteractor rightController;
+    private XRDirectInteractor interactor;
+
+    protected override void OnSelectEntered(SelectEnterEventArgs args)
+    {
+        base.OnSelectEntered(args);
+        interactor = args.interactorObject as XRDirectInteractor;
+    }
+
     protected override void OnSelectExited(SelectExitEventArgs args)
     {
         base.OnSelectExited(args);
+        interactor = null;
         PullAmount = 0;
     }
 
@@ -35,6 +50,9 @@ public class PullMeasurer : XRBaseInteractable
 
         // Figure out the new pull value, and it's position in space
         PullAmount = CalculatePull(interactorPosition);
+        
+        // Send haptic feedback to the controller pulling the string
+        interactor.SendHapticImpulse(PullAmount * hapticMultiplier, 0.1f);
     }
 
     private float CalculatePull(Vector3 pullPosition)
