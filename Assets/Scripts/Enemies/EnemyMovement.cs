@@ -10,8 +10,9 @@ namespace Enemies
         private Vector3 targetPosition;
         private float timeStopped = 5;
         private bool wasRunning;
+        private GameObject shell;
 
-        [SerializeField] private int fov = 360;
+        [SerializeField] private int fov = 60;
         [SerializeField] private int viewRange = 15;
         private static readonly int Idle = Animator.StringToHash("Idle");
         private static readonly int Walk = Animator.StringToHash("Walk");
@@ -21,7 +22,6 @@ namespace Enemies
             Vector3 randomDirection = Random.insideUnitSphere * distance;
                
             randomDirection += origin;
-               
             NavMeshHit navHit;
                
             NavMesh.SamplePosition(randomDirection, out navHit, distance, layermask);
@@ -34,12 +34,13 @@ namespace Enemies
         {
             navMeshAgent = GetComponent<NavMeshAgent>();
             animator = GetComponent<Animator>();
+            shell = GameObject.Find("TurtleShellPBR");
         }
 
         private bool CanSeeTarget(Transform target)
         {
             Vector3 toTarget = target.position - (transform.position + new Vector3(0,1,0));
-            if (Vector3.Angle(transform.forward, toTarget) <= fov)
+            if (Vector3.Angle(transform.forward, toTarget) <= fov && toTarget.magnitude < viewRange)
             {
                 return true;
             } 
@@ -56,7 +57,7 @@ namespace Enemies
 
             if (timeStopped > 3.0f)
             {
-                Vector3 v3 = RandomNavSphere(this.transform.position, 4, LayerMask.NameToLayer("Terrain"));
+                Vector3 v3 = RandomNavSphere(this.transform.position, viewRange, LayerMask.NameToLayer("Terrain"));
                 navMeshAgent.SetDestination(v3);
                 animator.SetTrigger(Walk);
                 transform.LookAt(v3);
@@ -74,13 +75,12 @@ namespace Enemies
             else
                 RunToPlayer(player);
         }
-
+        
         private void RunToPlayer(Transform player)
         {
             Vector3 v3 = player.position;
             navMeshAgent.SetDestination(v3);
             animator.SetTrigger(Run);
-            transform.LookAt(v3);
             wasRunning = true;
         }
 
