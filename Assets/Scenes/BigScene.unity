@@ -689,6 +689,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bow
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 85b4978aab8b62f4284e92ffb6e6130e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Bow
+      objectReference: {fileID: 0}
     - target: {fileID: 1151388028547126963, guid: 85b4978aab8b62f4284e92ffb6e6130e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2074,7 +2079,7 @@ MonoBehaviour:
       m_Calls: []
   start: {fileID: 1283496646}
   end: {fileID: 598431740}
-  hapticMultiplier: 0
+  hasArrow: 0
 --- !u!1001 &1190845180
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2414,7 +2419,7 @@ PrefabInstance:
     - target: {fileID: 6598815579406187037, guid: 9f5a24a380916d14db9775daab4fe333,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
