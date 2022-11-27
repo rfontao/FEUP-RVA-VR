@@ -8,10 +8,10 @@ public class PullMeasurer : XRBaseInteractable
     [SerializeField] private Transform start;
     [SerializeField] private Transform end;
 
-    [SerializeField] private float hapticMultiplier;
-
+    public Bow Bow { get; private set; }
     public float PullAmount { get; private set; } = 0.0f;
 
+    public bool hasArrow = false;
     public Vector3 PullPosition => Vector3.Lerp(start.position, end.position, PullAmount);
 
     private XRDirectInteractor leftController;
@@ -20,6 +20,8 @@ public class PullMeasurer : XRBaseInteractable
 
     protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
+        Bow = GameObject.FindGameObjectWithTag("Bow").GetComponent<Bow>();
+        
         base.OnSelectEntered(args);
         interactor = args.interactorObject as XRDirectInteractor;
     }
@@ -50,9 +52,12 @@ public class PullMeasurer : XRBaseInteractable
 
         // Figure out the new pull value, and it's position in space
         PullAmount = CalculatePull(interactorPosition);
-        
-        // Send haptic feedback to the controller pulling the string
-        interactor.SendHapticImpulse(PullAmount * hapticMultiplier, 0.1f);
+
+        if (Bow.isSelected)
+        {
+            // Send haptic feedback to the controller pulling the string
+            interactor.SendHapticImpulse(PullAmount, 0.1f);
+        }
     }
 
     private float CalculatePull(Vector3 pullPosition)
