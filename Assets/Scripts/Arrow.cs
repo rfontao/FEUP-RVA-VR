@@ -34,13 +34,13 @@ public class Arrow : XRGrabInteractable
     private void LaunchArrow(Notch notch)
     {
         launched = true;
-        ApplyForce(notch.PullMeasurer);
+        ApplyForce();
         StartCoroutine(LaunchRoutine());
     }
 
-    private void ApplyForce(PullMeasurer pullMeasurer)
+    private void ApplyForce()
     {
-        rigidbody.AddForce(transform.forward * (pullMeasurer.PullAmount * speed));
+        rigidbody.AddForce(transform.forward * speed);
     }
 
     private IEnumerator LaunchRoutine()
