@@ -12,8 +12,17 @@ public class SetSkybox : MonoBehaviour
     {
         var now = DateTime.Now;
         var skybox = GetComponent<Skybox>();
-
-        skybox.material = now.Hour is > 18 or < 6 ? nightSkybox : daySkybox;
+        
+        if(now.Hour is > 18 or < 6){
+            skybox.material = nightSkybox;
+            var light = GameObject.Find("Directional Light");
+            light.SetActive(false);
+            RenderSettings.ambientIntensity = 0.15f;
+        }
+        else{
+            skybox.material = daySkybox;
+        }
+        
     }
     
 }
