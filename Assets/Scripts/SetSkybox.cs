@@ -7,21 +7,40 @@ public class SetSkybox : MonoBehaviour
     [SerializeField] private Material daySkybox;
     [SerializeField] private Material nightSkybox;
 
+    private Skybox skybox;
+
     private void Start()
     {
-        var now = DateTime.Now;
-        var skybox = GetComponent<Skybox>();
+        skybox = GetComponent<Skybox>();
+        SetAutomatic();
+    }
 
+    public void SetAutomatic()
+    {
+        var now = DateTime.Now;
         if (now.Hour is > 18 or < 6)
         {
-            skybox.material = nightSkybox;
-            var light = GameObject.Find("Directional Light");
-            light.SetActive(false);
-            RenderSettings.ambientIntensity = 0.15f;
+            SetNight();
         }
         else
         {
-            skybox.material = daySkybox;
+            SetDay();
         }
+    }
+
+    public void SetNight()
+    {
+        skybox.material = nightSkybox;
+        var light = GameObject.Find("Directional Light");
+        light.SetActive(false);
+        RenderSettings.ambientIntensity = 0.15f;
+    }
+
+    public void SetDay()
+    {
+        skybox.material = daySkybox;
+        var light = GameObject.Find("Directional Light");
+        light.SetActive(true);
+        RenderSettings.ambientIntensity = 1.0f;
     }
 }
