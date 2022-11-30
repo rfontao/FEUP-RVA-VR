@@ -49,6 +49,7 @@ namespace Enemies
     
         private void NextPosition()
         {
+            return;
             if (wasRunning) animator.SetTrigger(Idle);
             if (timeStopped > 1.0f && timeStopped < 3.0f && navMeshAgent.velocity == new Vector3(0, 0, 0) && InWalkingState())
             {
