@@ -10,10 +10,15 @@ public class SetSkybox : MonoBehaviour
 
     private Skybox skybox;
 
-    private void Start()
+    private void Awake()
     {
         skybox = GetComponent<Skybox>();
         SetAutomatic();
+    }
+
+    private void Start()
+    {
+        
     }
 
     public void SetAutomatic()

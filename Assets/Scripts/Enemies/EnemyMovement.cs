@@ -68,6 +68,7 @@ namespace Enemies
         // Update is called once per frame
         void Update()
         {
+            if (animator.GetCurrentAnimatorClipInfo(0)[0].clip.name == "Die") return;
             timeStopped += Time.deltaTime;
             Transform player = GameObject.FindGameObjectWithTag("Player").transform;
             if(!CanSeeTarget(player))
