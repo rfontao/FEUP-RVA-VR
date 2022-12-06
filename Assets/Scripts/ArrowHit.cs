@@ -16,23 +16,18 @@ public class ArrowHit : MonoBehaviour, IArrowHittable
     {
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
-        StartCoroutine(Hitsoon());
-    }
-
-    public IEnumerator Hitsoon(){
-        yield return new WaitForSeconds(3);
-        Hit(new Arrow());
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     public void Hit(Arrow arrow)
     {
         audioSource.PlayOneShot(audioClips[Random.Range(0, audioClips.Count)]);
         animator.SetTrigger("Die");
+        this.tag = "DeadEnemy";
+        GameObject.FindGameObjectWithTag("Boss").GetComponent<BossSpawner>().UpdateDeadSlimes();
     }
 }
