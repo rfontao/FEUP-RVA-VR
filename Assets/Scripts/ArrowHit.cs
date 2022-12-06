@@ -15,11 +15,12 @@ public class ArrowHit : MonoBehaviour, IArrowHittable
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     public void Hit(Arrow arrow)
     {
         animator.SetTrigger("Die");
+        this.tag = "DeadEnemy";
+        GameObject.FindGameObjectWithTag("Boss").GetComponent<BossSpawner>().UpdateDeadSlimes();
     }
 }

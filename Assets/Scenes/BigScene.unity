@@ -4282,7 +4282,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 71070703, guid: 4a52c22c9370d08488fe527bd180559f, type: 3}
       propertyPath: viewRange
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6224641333658259369, guid: 4a52c22c9370d08488fe527bd180559f,
         type: 3}
@@ -6254,7 +6254,7 @@ PrefabInstance:
     - target: {fileID: 7061687345345022184, guid: 85750a98a090058468adf66de0c2734a,
         type: 3}
       propertyPath: viewRange
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7156839854936404851, guid: 85750a98a090058468adf66de0c2734a,
         type: 3}
@@ -6265,6 +6265,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SlimePBR (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157594994058377862, guid: 85750a98a090058468adf66de0c2734a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157594994058377862, guid: 85750a98a090058468adf66de0c2734a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 7159730524860981048, guid: 85750a98a090058468adf66de0c2734a,
         type: 3}
@@ -8259,7 +8269,7 @@ PrefabInstance:
     - target: {fileID: 7061687345345022184, guid: 85750a98a090058468adf66de0c2734a,
         type: 3}
       propertyPath: viewRange
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7156839854936404851, guid: 85750a98a090058468adf66de0c2734a,
         type: 3}
@@ -8270,6 +8280,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SlimePBR (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157594994058377862, guid: 85750a98a090058468adf66de0c2734a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157594994058377862, guid: 85750a98a090058468adf66de0c2734a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 7159730524860981048, guid: 85750a98a090058468adf66de0c2734a,
         type: 3}
@@ -9094,7 +9114,7 @@ GameObject:
   - component: {fileID: 1256767205}
   - component: {fileID: 1256767207}
   - component: {fileID: 1256767208}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain_(-100.0, 0.0, 26.9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10288,6 +10308,7 @@ Transform:
   - {fileID: 1126115428}
   - {fileID: 624958574}
   - {fileID: 1420633908}
+  - {fileID: 1850008912}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10408,7 +10429,7 @@ PrefabInstance:
     - target: {fileID: 6598815579406187037, guid: 9f5a24a380916d14db9775daab4fe333,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -10454,12 +10475,22 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 71070703, guid: 4a52c22c9370d08488fe527bd180559f, type: 3}
       propertyPath: viewRange
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6224641333658259369, guid: 4a52c22c9370d08488fe527bd180559f,
         type: 3}
       propertyPath: m_Name
       value: TurtleShellPBR (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6224641333658259369, guid: 4a52c22c9370d08488fe527bd180559f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6224641333658259369, guid: 4a52c22c9370d08488fe527bd180559f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6230025226535738745, guid: 4a52c22c9370d08488fe527bd180559f,
         type: 3}
@@ -11095,7 +11126,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1483419521}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.3, y: 2.08, z: 15.8}
+  m_LocalPosition: {x: 18.4, y: 2.08, z: 15.8}
   m_LocalScale: {x: 0.9482259, y: 10, z: 4.1106277}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13396,6 +13427,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83e4e6cca11330d4088d729ab4fc9d9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1850008911
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1850008912}
+  - component: {fileID: 1850008913}
+  m_Layer: 0
+  m_Name: Boss
+  m_TagString: Boss
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1850008912
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850008911}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2051650383}
+  m_Father: {fileID: 1385521400}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1850008913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850008911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65b28dbbbb708b64b8d4927603d4607d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slime: {fileID: 2051650384}
 --- !u!1001 &1860825745
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14724,6 +14801,129 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 647254714}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2051650382
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 1850008912}
+    m_Modifications:
+    - target: {fileID: 7061687345345022184, guid: 85750a98a090058468adf66de0c2734a,
+        type: 3}
+      propertyPath: fov
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7061687345345022184, guid: 85750a98a090058468adf66de0c2734a,
+        type: 3}
+      propertyPath: viewRange
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7114284903209435074, guid: 85750a98a090058468adf66de0c2734a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 371a9e3f3f89ab144ac92ef0e56e6025, type: 2}
+    - target: {fileID: 7157594994058377862, guid: 85750a98a090058468adf66de0c2734a,
+        type: 3}
+      propertyPath: m_Name
+      value: SlimeBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157594994058377862, guid: 85750a98a090058468adf66de0c2734a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159730524860981048, guid: 85750a98a090058468adf66de0c2734a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159730524860981048, guid: 85750a98a090058468adf66de0c2734a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 14.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159730524860981048, guid: 85750a98a090058468adf66de0c2734a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 14.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159730524860981048, guid: 85750a98a090058468adf66de0c2734a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 14.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159730524860981048, guid: 85750a98a090058468adf66de0c2734a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 26.808285
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159730524860981048, guid: 85750a98a090058468adf66de0c2734a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.6045604
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159730524860981048, guid: 85750a98a090058468adf66de0c2734a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.0095787
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159730524860981048, guid: 85750a98a090058468adf66de0c2734a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.75470966
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159730524860981048, guid: 85750a98a090058468adf66de0c2734a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159730524860981048, guid: 85750a98a090058468adf66de0c2734a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.656059
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159730524860981048, guid: 85750a98a090058468adf66de0c2734a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159730524860981048, guid: 85750a98a090058468adf66de0c2734a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159730524860981048, guid: 85750a98a090058468adf66de0c2734a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -82
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159730524860981048, guid: 85750a98a090058468adf66de0c2734a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159730524860981048, guid: 85750a98a090058468adf66de0c2734a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: 85750a98a090058468adf66de0c2734a, type: 3}
+--- !u!4 &2051650383 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7159730524860981048, guid: 85750a98a090058468adf66de0c2734a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2051650382}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2051650384 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7157594994058377862, guid: 85750a98a090058468adf66de0c2734a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2051650382}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2052238071
 GameObject:
   m_ObjectHideFlags: 0
@@ -15772,12 +15972,22 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 71070703, guid: 4a52c22c9370d08488fe527bd180559f, type: 3}
       propertyPath: viewRange
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6224641333658259369, guid: 4a52c22c9370d08488fe527bd180559f,
         type: 3}
       propertyPath: m_Name
       value: TurtleShellPBR
+      objectReference: {fileID: 0}
+    - target: {fileID: 6224641333658259369, guid: 4a52c22c9370d08488fe527bd180559f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6224641333658259369, guid: 4a52c22c9370d08488fe527bd180559f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6230025226535738745, guid: 4a52c22c9370d08488fe527bd180559f,
         type: 3}
@@ -19078,7 +19288,7 @@ PrefabInstance:
     - target: {fileID: 7061687345345022184, guid: 85750a98a090058468adf66de0c2734a,
         type: 3}
       propertyPath: viewRange
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7156839854936404851, guid: 85750a98a090058468adf66de0c2734a,
         type: 3}
@@ -19089,6 +19299,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SlimePBR
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157594994058377862, guid: 85750a98a090058468adf66de0c2734a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157594994058377862, guid: 85750a98a090058468adf66de0c2734a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 7159730524860981048, guid: 85750a98a090058468adf66de0c2734a,
         type: 3}
