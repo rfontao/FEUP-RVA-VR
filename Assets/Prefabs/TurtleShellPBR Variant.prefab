@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4906828391645816, guid: 38efdaadbfe1d624bbee439cb02e7661, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4906828391645816, guid: 38efdaadbfe1d624bbee439cb02e7661, type: 3}
       propertyPath: m_LocalPosition.x
@@ -247,6 +247,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09b7137c900020f45a2991a02eb5092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: 79180f511d89441b9aa23ccae1992fe0, type: 3}
 --- !u!114 &6548376014855559500
 MonoBehaviour:
   m_ObjectHideFlags: 0

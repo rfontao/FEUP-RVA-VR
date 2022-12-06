@@ -138,7 +138,7 @@ Transform:
   - {fileID: 7160047403823975214}
   - {fileID: 7159767274426227508}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &7061687345345022186
 Animator:
@@ -201,6 +201,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09b7137c900020f45a2991a02eb5092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: 79180f511d89441b9aa23ccae1992fe0, type: 3}
 --- !u!195 &7061687345345022185
 NavMeshAgent:
   m_ObjectHideFlags: 0

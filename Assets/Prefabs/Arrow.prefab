@@ -28,6 +28,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8623957444106179151}
   m_RootOrder: 0
@@ -51,6 +52,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -107,6 +109,7 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8371234334440448612}
   - {fileID: 8386148805111352677}
@@ -141,6 +144,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: -0.37857613, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8623957444106179151}
   m_RootOrder: 1
@@ -164,6 +168,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -224,6 +229,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8623957444106179151}
   - {fileID: 7069540796795955509}
@@ -346,6 +352,12 @@ MonoBehaviour:
   m_RetainTransformParent: 0
   m_AttachPointCompatibilityMode: 0
   speed: 1500
+  audioClips:
+  - {fileID: 8300000, guid: 522e3ab7bac86e443bd5721d8933b455, type: 3}
+  - {fileID: 8300000, guid: 07cc499b4e48b544aadf3af4b86365bd, type: 3}
+  - {fileID: 8300000, guid: bbf962a63a63c7b46a8e1d13be6b9177, type: 3}
+  - {fileID: 8300000, guid: 446efb2bed112d943bac13192a0a0cc7, type: 3}
+  - {fileID: 8300000, guid: c7dfaade8a16d6f4e953914319840ee9, type: 3}
 --- !u!114 &6072647748450659436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -418,6 +430,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.425}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5832823175582339433}
   m_RootOrder: 1

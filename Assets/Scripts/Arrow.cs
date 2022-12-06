@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -13,11 +14,18 @@ public class Arrow : XRGrabInteractable
 
     private RaycastHit hit;
 
+    [SerializeField]
+    private List<AudioClip> audioClips = new List<AudioClip>();
+
+    private AudioSource audioSource;
+
     protected override void Awake()
     {
         base.Awake();
         rigidbody = GetComponent<Rigidbody>();
         caster = GetComponent<ArrowCaster>();
+
+        audioSource = GameObject.FindGameObjectWithTag("Bow").GetComponent<AudioSource>();
     }
 
     protected override void OnSelectExited(SelectExitEventArgs args)
@@ -35,6 +43,9 @@ public class Arrow : XRGrabInteractable
     {
         launched = true;
         ApplyForce();
+
+        audioSource.PlayOneShot(audioClips[Random.Range(0, audioClips.Count)]);
+
         StartCoroutine(LaunchRoutine());
     }
 

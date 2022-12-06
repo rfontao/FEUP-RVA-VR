@@ -18,6 +18,10 @@ public class VolumeController : MonoBehaviour
     }
 
     public void SetCreatureVolume(float value){
-        mixer.SetFloat("CreaturesVol", Mathf.Log10(value) * 20);
+        mixer.SetFloat("Objects/CreaturesVol", Mathf.Log10(value) * 20);
+    }
+
+    public void SetOtherVolume(float value){
+        mixer.SetFloat("OtherVol", Mathf.Log10(value) * 20);
     }
 }
