@@ -29,6 +29,11 @@ namespace Enemies
             return navHit.position;
         }
 
+        public void Stop()
+        {
+            navMeshAgent.SetDestination(this.transform.position);
+        }
+        
         // Start is called before the first frame update
         void Start()
         {

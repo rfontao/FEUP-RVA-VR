@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Enemies;
 using UnityEngine;
 
 public class ArrowHit : MonoBehaviour, IArrowHittable
@@ -10,6 +11,8 @@ public class ArrowHit : MonoBehaviour, IArrowHittable
     [SerializeField]
     private List<AudioClip> audioClips = new List<AudioClip>();
 
+    [SerializeField] private int hp = 1;
+    
     private Animator animator;
     // Start is called before the first frame update
     void Start()
@@ -23,11 +26,21 @@ public class ArrowHit : MonoBehaviour, IArrowHittable
     {
     }
 
+    public void SetHP(int hp)
+    {
+        this.hp = hp;
+    }
+
     public void Hit(Arrow arrow)
     {
-        audioSource.PlayOneShot(audioClips[Random.Range(0, audioClips.Count)]);
-        animator.SetTrigger("Die");
-        this.tag = "DeadEnemy";
-        GameObject.FindGameObjectWithTag("Boss").GetComponent<BossSpawner>().UpdateDeadSlimes();
+        hp--;
+        if (hp <= 0 && !tag.Equals("DeadEnemy"))
+        {
+            audioSource.PlayOneShot(audioClips[Random.Range(0, audioClips.Count)]);
+            animator.SetTrigger("Die");
+            this.tag = "DeadEnemy";
+            this.gameObject.GetComponent<EnemyMovement>().Stop();
+            GameObject.FindGameObjectWithTag("Boss").GetComponent<BossSpawner>().UpdateDeadSlimes();
+        }
     }
 }
