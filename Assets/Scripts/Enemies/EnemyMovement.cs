@@ -65,8 +65,8 @@ namespace Enemies
                 Vector3 v3 = RandomNavSphere(this.transform.position, viewRange, LayerMask.NameToLayer("Terrain"));
                 navMeshAgent.SetDestination(v3);
                 animator.SetTrigger(Walk);
-                transform.LookAt(v3);
                 timeStopped = 0;
+                transform.LookAt(v3);
             }
         }
     

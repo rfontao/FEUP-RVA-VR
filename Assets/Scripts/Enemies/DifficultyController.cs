@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Enemies;
 using Unity.XR.CoreUtils;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class DifficultyController : MonoBehaviour
 {
@@ -50,12 +52,20 @@ public class DifficultyController : MonoBehaviour
 
     private void DestroyEnemies()
     {
-        GameObject[] gos = GameObject.FindGameObjectsWithTag("Enemy");
-        foreach(GameObject go in gos)
-            Destroy(go);
-        gos = GameObject.FindGameObjectsWithTag("DeadEnemy");
-        foreach(GameObject go in gos)
-            Destroy(go);
+        try
+        {
+            GameObject[] gos = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach(GameObject go in gos)
+                Destroy(go);
+            gos = GameObject.FindGameObjectsWithTag("DeadEnemy");
+            foreach(GameObject go in gos)
+                Destroy(go);
+        }
+        catch (Exception e)
+        {
+            //There are no enemies with a wanted created yet, most likely "DeadEnemy"
+        }
+        
     }
 
     // Update is called once per frame
