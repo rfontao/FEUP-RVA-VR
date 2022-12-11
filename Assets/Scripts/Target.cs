@@ -12,6 +12,10 @@ public class Target : MonoBehaviour, IArrowHittable
         DisableCollider(arrow);
     }
 
+    public void HitByRock(){
+        
+    }
+
     private void ApplyMaterial()
     {
         if (TryGetComponent(out MeshRenderer meshRenderer))

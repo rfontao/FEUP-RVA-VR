@@ -24,6 +24,10 @@ public class PlayerCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if(other.tag != "Enemy" && other.tag != "BossEnemy"){
+            return;
+        }
+        
         if (immunityTime > 5f)
         {
             immunityTime = 0f;

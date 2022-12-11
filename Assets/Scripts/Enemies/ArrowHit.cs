@@ -35,7 +35,24 @@ public class ArrowHit : MonoBehaviour, IArrowHittable
     {
         hp--;
         
-        audioSource.PlayOneShot(audioClips[Random.Range(0, audioClips.Count)]);
+        if(!tag.Equals("DeadEnemy"))
+            audioSource.PlayOneShot(audioClips[Random.Range(0, audioClips.Count)]);
+
+        if (hp <= 0 && !tag.Equals("DeadEnemy"))
+        {
+            animator.SetTrigger("Die");
+            this.tag = "DeadEnemy";
+            this.gameObject.GetComponent<EnemyMovement>().Stop();
+            GameObject.FindGameObjectWithTag("Boss").GetComponent<BossSpawner>().UpdateDeadSlimes();
+        }
+    }
+
+    public void HitByRock()
+    {
+        hp--;
+
+        if(!tag.Equals("DeadEnemy"))
+            audioSource.PlayOneShot(audioClips[Random.Range(0, audioClips.Count)]);
 
         if (hp <= 0 && !tag.Equals("DeadEnemy"))
         {
