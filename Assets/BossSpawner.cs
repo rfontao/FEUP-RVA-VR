@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Collections.LowLevel.Unsafe;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class BossSpawner : MonoBehaviour
 {
 
     [SerializeField] private GameObject slime;
+    [SerializeField] private TextMeshProUGUI text;
     void Start()
     {}
 
@@ -17,9 +19,12 @@ public class BossSpawner : MonoBehaviour
 
     public void UpdateDeadSlimes()
     {
-        if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+        int number = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        if (number == 0)
         {
             transform.GetChild(0).gameObject.SetActive(true);
         }
+        else text.text = number.ToString();
+
     }
 }

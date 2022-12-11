@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Enemies;
+using TMPro;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -11,6 +12,7 @@ public class DifficultyController : MonoBehaviour
 
     [SerializeField] private GameObject slime;
     [SerializeField] private GameObject turtle;
+    [SerializeField] private TextMeshProUGUI text;
 
     private int currentDiff = 2;
     
@@ -48,6 +50,8 @@ public class DifficultyController : MonoBehaviour
                     Instantiate(turtle, point.transform.position + v3, Quaternion.identity);
             }
         }
+
+        text.text = (numberEnemies * 2).ToString();
     }
 
     private void DestroyEnemies()
