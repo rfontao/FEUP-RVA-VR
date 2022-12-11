@@ -34,9 +34,11 @@ public class ArrowHit : MonoBehaviour, IArrowHittable
     public void Hit(Arrow arrow)
     {
         hp--;
+        
+        audioSource.PlayOneShot(audioClips[Random.Range(0, audioClips.Count)]);
+
         if (hp <= 0 && !tag.Equals("DeadEnemy"))
         {
-            audioSource.PlayOneShot(audioClips[Random.Range(0, audioClips.Count)]);
             animator.SetTrigger("Die");
             this.tag = "DeadEnemy";
             this.gameObject.GetComponent<EnemyMovement>().Stop();

@@ -19083,7 +19083,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c65281d11f58ee24298f2f3ad7682b6e, type: 3}
   - {fileID: 8300000, guid: a0f069338c0177c49b4cf032f3bb31e8, type: 3}
   - {fileID: 8300000, guid: 5f5f6407a3c48ca41842c2c0707f08a0, type: 3}
-  - {fileID: 8300000, guid: c99e9720be9ce0b448a32872ce94de58, type: 3}
+  - {fileID: 8300000, guid: b103dc98685a2f24b946ca2163843255, type: 3}
+  - {fileID: 8300000, guid: 2ab97f7ecefc8ec4c84270c06de0edd8, type: 3}
+  - {fileID: 8300000, guid: b3a94fa25d876e04694e54d8a41a4812, type: 3}
+  - {fileID: 8300000, guid: 8498c4b1e0fc7e040aa901cd9623c875, type: 3}
   audioSource: {fileID: 3705527143305886323}
 --- !u!82 &3705527143305886323
 AudioSource:

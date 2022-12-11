@@ -80,10 +80,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7014749599950360895, guid: 38efdaadbfe1d624bbee439cb02e7661,
         type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7014749599950360895, guid: 38efdaadbfe1d624bbee439cb02e7661,
+        type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2633020612898672921, guid: 38efdaadbfe1d624bbee439cb02e7661, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 38efdaadbfe1d624bbee439cb02e7661, type: 3}
 --- !u!82 &3980467160798088766 stripped
@@ -177,6 +183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClips:
   - {fileID: 8300000, guid: 79180f511d89441b9aa23ccae1992fe0, type: 3}
+  hp: 1
 --- !u!114 &6548376014855559500
 MonoBehaviour:
   m_ObjectHideFlags: 0
