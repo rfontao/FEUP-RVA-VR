@@ -51,7 +51,7 @@ public class DifficultyController : MonoBehaviour
             }
         }
 
-        text.text = (numberEnemies * 2).ToString();
+        text.text = (numberEnemies * 3).ToString();
     }
 
     private void DestroyEnemies()

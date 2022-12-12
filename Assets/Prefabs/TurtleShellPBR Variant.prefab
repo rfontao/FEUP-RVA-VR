@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fov: 60
-  viewRange: 1
+  viewRange: 15
 --- !u!114 &71070704
 MonoBehaviour:
   m_ObjectHideFlags: 0
