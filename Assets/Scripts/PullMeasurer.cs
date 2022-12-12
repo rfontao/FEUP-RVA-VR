@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem.XR.Haptics;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -8,7 +9,7 @@ public class PullMeasurer : XRBaseInteractable
     [SerializeField] private Transform start;
     [SerializeField] private Transform end;
 
-    public Bow Bow { get; private set; }
+    public GameObject[] Bows { get; private set; }
     public float PullAmount { get; private set; } = 0.0f;
 
     public bool hasArrow = false;
@@ -20,7 +21,8 @@ public class PullMeasurer : XRBaseInteractable
 
     protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
-        Bow = GameObject.FindGameObjectWithTag("Bow").GetComponent<Bow>();
+        //.GetComponent<Bow>()
+        Bows = GameObject.FindGameObjectsWithTag("Bow");
         
         base.OnSelectEntered(args);
         interactor = args.interactorObject as XRDirectInteractor;
@@ -53,7 +55,7 @@ public class PullMeasurer : XRBaseInteractable
         // Figure out the new pull value, and it's position in space
         PullAmount = CalculatePull(interactorPosition);
 
-        if (Bow.isSelected)
+        if (Bows[0].GetComponent<Bow>().isSelected || Bows[1].GetComponent<Bow>().isSelected || Bows[2].GetComponent<Bow>().isSelected)
         {
             // Send haptic feedback to the controller pulling the string
             interactor.SendHapticImpulse(PullAmount, 0.1f);
