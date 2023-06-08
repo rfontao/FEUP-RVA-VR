@@ -4,11 +4,9 @@ A VR game developed for the Virtual Reality course of the Master in Informatics 
 Developed in Unity using the XR Interaction Toolkit and the Oculus Integration package. Tested on Oculus Quest 2 (non-Standalone).
 
 
-## Authors
+## Video demonstration:
 
-- Ricardo Jorge Cruz Fontão (up201806317@edu.fe.up.pt)
-- Henrique Melo Ribeiro (up201806529@edu.fe.up.pt)
-- João Alexandre Lobo Cardoso (up201806531@edu.fe.up.pt)
+[![video thumbnail](https://img.youtube.com/vi/2I5l1ac6__I/0.jpg)](https://www.youtube.com/watch?v=2I5l1ac6__I).
 
 
 ## Features
@@ -59,3 +57,10 @@ Developed in Unity using the XR Interaction Toolkit and the Oculus Integration p
     - https://pixabay.com/sound-effects/slimejump-6913/ 
     - https://pixabay.com/sound-effects/slime-squish-14539/ 
   - Forest sounds: https://assetstore.unity.com/packages/audio/ambient/forest-sounds-2023-lite-230097
+
+
+## Authors
+
+- Ricardo Jorge Cruz Fontão (up201806317@edu.fe.up.pt)
+- Henrique Melo Ribeiro (up201806529@edu.fe.up.pt)
+- João Alexandre Lobo Cardoso (up201806531@edu.fe.up.pt)
