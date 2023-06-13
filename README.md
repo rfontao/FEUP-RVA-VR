@@ -4,8 +4,8 @@ A VR game developed for the Virtual Reality course of the Master in Informatics 
 Developed in Unity using the XR Interaction Toolkit and the Oculus Integration package. Tested on Oculus Quest 2 (non-Standalone).
 
 
-## Video demonstration:
-
+## Video demonstration
+*Use the timestamps to check out the different features*
 [![video thumbnail](https://img.youtube.com/vi/2I5l1ac6__I/0.jpg)](https://www.youtube.com/watch?v=2I5l1ac6__I)
 
 
